@@ -16,13 +16,14 @@ class ModelBase:
         pass
 
     def create(self) -> None:
-        pass
+        self.query.create(table_name=self.table_name, **self.__dict__)
 
     def delete(self) -> None:
         pass
 
     @classmethod
     def get(cls, id: str) -> None:
+        # TODO: I want this to return a model object.
         return cls.query.get(table_name=cls.table_name, id=id)
 
 
