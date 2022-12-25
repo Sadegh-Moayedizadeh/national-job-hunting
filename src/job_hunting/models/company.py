@@ -1,5 +1,5 @@
-from job_hunting.models.base import Base
 from job_hunting.models import JobRequest
+from job_hunting.models.base import Base
 
 
 class Company(Base):

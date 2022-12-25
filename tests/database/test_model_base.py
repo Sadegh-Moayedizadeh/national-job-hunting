@@ -1,9 +1,8 @@
 import json
 from pathlib import Path
 
-from pytest import raises
-
 from job_hunting.model import create_base
+from pytest import raises
 
 
 def test_get_method_should_raise_error_if_there_is_no_entry(
