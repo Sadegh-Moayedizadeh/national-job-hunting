@@ -56,7 +56,7 @@ class Query:
         self, table: List[Dict[str, Any]], entry: Dict[str, Any]
     ) -> None:
         schema = self._get_schema(table)
-        if not all(field in schema for field in entry.keys()):
+        if set(entry.keys()) != set(schema.keys()):
             raise ValueError('The entry does not match the schema.')
 
     def _get_schema(self, table: List[Dict[str, Any]]) -> None:
