@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import uuid
 from typing import List, Iterable, Mapping
-from dataclasses import dataclass, field
 import datetime
+from job_hunting.model import ModelBase
 
 
-class User:
+class User(ModelBase):
     def __init__(
         self,
         first_name: str,
@@ -29,7 +29,7 @@ class User:
         self._experiences.append(experience)
 
 
-class Company:
+class Company(ModelBase):
     def __init__(
         self,
         name: str,
@@ -50,17 +50,15 @@ class Company:
         self._job_requests.append(job_request)
 
 
-@dataclass
-class Experience:
+class Experience(ModelBase):
     user_id: str
     company_id: str
     title: str
     starts_at: datetime.date
-    ends_at: datetime.date = field(default_factory=datetime.date.today)
+    ends_at: datetime.date
 
 
-@dataclass
-class JobRequest:
+class JobRequest(ModelBase):
     company_name: str
     title: str
     conditions: Mapping[str: float]
