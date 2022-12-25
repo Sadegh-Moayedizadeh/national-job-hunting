@@ -1,6 +1,7 @@
-from pytest import raises
-from pathlib import Path
 import json
+from pathlib import Path
+
+from pytest import raises
 
 from job_hunting.model import create_base
 

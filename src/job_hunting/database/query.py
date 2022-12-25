@@ -1,7 +1,7 @@
-from contextlib import contextmanager
-from typing import Union, Generator, Dict, Any, List, Mapping
-from pathlib import Path
 import json
+from contextlib import contextmanager
+from pathlib import Path
+from typing import Any, Dict, Generator, List, Mapping, Union
 
 
 class Query:
